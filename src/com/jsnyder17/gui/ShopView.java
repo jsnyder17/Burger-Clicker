@@ -34,23 +34,23 @@ public class ShopView extends JPanel implements ActionListener {
 	}
 	private void initializeComponents() {
 		title = new JLabel("The Store");
+		title.setAlignmentX(CENTER_ALIGNMENT);
 		this.add(title);
 		
 		burgerStandButton = new JButton("Burger Stand - $200");
 		burgerStandButton.setText("Burger Stand - $200");
-		//burgerStandButton.setSize(200, 20);
-		//burgerStandButton.setLocation(200, 50);
+		burgerStandButton.setAlignmentX(CENTER_ALIGNMENT);
 		burgerStandButton.addActionListener(this);
 		this.add(burgerStandButton);
 		
 		burgerBlockButton = new JButton();
 		burgerBlockButton.setText("Burger Block - $1000");
-		//burgerBlockButton.setSize(200, 20);
-		//burgerBlockButton.setLocation(200, 80);
+		burgerBlockButton.setAlignmentX(CENTER_ALIGNMENT);
 		burgerBlockButton.addActionListener(this);
 		this.add(burgerBlockButton);
 		
 		purchaseStatus = new JLabel();
+		purchaseStatus.setAlignmentX(CENTER_ALIGNMENT);
 		this.add(purchaseStatus);
 	}
 	

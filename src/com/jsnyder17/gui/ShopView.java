@@ -1,5 +1,6 @@
 package com.jsnyder17.gui;
 
+import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
@@ -9,6 +10,7 @@ import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 import com.jsnyder17.burgercreators.BurgerCreator;
 import com.jsnyder17.main.GameManager;
@@ -19,41 +21,37 @@ public class ShopView extends JPanel implements ActionListener {
 	private JLabel purchaseStatus;
 	private JButton burgerStandButton;
 	private JButton burgerBlockButton;
+	private BoxLayout layout;
 	
 	public ShopView(GameManager gm) {
 		this.gm = gm;
 		
-		this.setLayout(new FlowLayout());
+		this.layout = new BoxLayout(this, BoxLayout.PAGE_AXIS);
 		
-		initializeLabels();
-		initializeButtons();
+		this.setLayout(layout);
+		
+		initializeComponents();
 	}
-	
-	private void initializeLabels() {
-		title = new JLabel();
-		title.setText("The Store");
-		//title.setSize(150, 10);
-		title.setLocation(200, 10);
+	private void initializeComponents() {
+		title = new JLabel("The Store");
 		this.add(title);
 		
-		purchaseStatus = new JLabel();
-		purchaseStatus.setLocation(200, 300);
-		this.add(purchaseStatus);
-	}
-	private void initializeButtons() {
-		burgerStandButton = new JButton();
+		burgerStandButton = new JButton("Burger Stand - $200");
 		burgerStandButton.setText("Burger Stand - $200");
-		burgerStandButton.setSize(200, 20);
-		burgerStandButton.setLocation(200, 50);
+		//burgerStandButton.setSize(200, 20);
+		//burgerStandButton.setLocation(200, 50);
 		burgerStandButton.addActionListener(this);
 		this.add(burgerStandButton);
 		
 		burgerBlockButton = new JButton();
 		burgerBlockButton.setText("Burger Block - $1000");
-		burgerBlockButton.setSize(200, 20);
-		burgerBlockButton.setLocation(200, 80);
+		//burgerBlockButton.setSize(200, 20);
+		//burgerBlockButton.setLocation(200, 80);
 		burgerBlockButton.addActionListener(this);
 		this.add(burgerBlockButton);
+		
+		purchaseStatus = new JLabel();
+		this.add(purchaseStatus);
 	}
 	
 	@Override
